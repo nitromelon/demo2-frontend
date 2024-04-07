@@ -2,6 +2,16 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
+## Important note
+
+You can run this project by running the following commands (Maybe you will need to install tauri first):
+
+```bash
+pnpm install
+pnpm tauri dev
+pnpm tauri build
+```
+
 ## Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!

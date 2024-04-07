@@ -56,10 +56,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 720,
         "resizable": true,
-        "title": "tremind",
-        "width": 800
+        "title": "Online Healthy Foods Store for All Your Healthy Foods.",
+        "width": 1280
       }
     ]
   }
