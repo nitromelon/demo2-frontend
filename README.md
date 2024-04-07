@@ -1,48 +1,57 @@
-# create-svelte
+# InnoFE - SWE30003 - Assignment 3
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Introduction
 
-## Important note
+This is frontend app made of tauri + svelte.
+Follow these steps to install and use Tauri:
 
-You can run this project by running the following commands (Maybe you will need to install tauri first):
+## Prerequisites
 
-```bash
-pnpm install
-pnpm tauri dev
-pnpm tauri build
-```
+1. **Install Rust**: Tauri is built on Rust. Install it by following the instructions on the [official Rust website](https://www.rust-lang.org/tools/install).
 
-## Creating a project
+2. **Install Node.js and npm**: Tauri uses Node.js and npm for some of its tooling. Download Node.js and npm from the [official Node.js website](https://nodejs.org/en/download/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+3. **Install pnpm**: Tauri can also use pnpm for package management. Install it globally with npm:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+    ```bash
+    npm install -g pnpm
+    ```
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Installation
 
-## Developing
+1. **Install Tauri CLI**: The Tauri CLI helps you create and manage your Tauri applications. Install it globally with pnpm:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+    ```bash
+    pnpm add -g @tauri-apps/cli
+    ```
 
-```bash
-npm run dev
+2. **Create a new Tauri application**: Create a new Tauri application using the Tauri CLI. This will create a new directory with a basic Tauri application:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+    ```bash
+    tauri init
+    ```
 
-## Building
+3. **Install dependencies**: Navigate into your new Tauri application directory and install the necessary dependencies:
 
-To create a production version of your app:
+    ```bash
+    cd {this folder}
+    pnpm install
+    ```
 
-```bash
-npm run build
-```
+## Usage
 
-You can preview the production build with `npm run preview`.
+1. **Run your Tauri application**: Start your Tauri application with the following command:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+    ```bash
+    pnpm tauri dev
+    ```
+
+2. **Build your Tauri application**: When you're ready to build a production version of your application, use the following command:
+
+    ```bash
+    pnpm tauri build
+    ```
+
+This will create a standalone application in the `src-tauri/target/release` directory.
+
+> Note: Tauri also requires some additional dependencies depending on your operating system. You can find more information about these in the [Tauri guides](https://tauri.app/v1/guides/).
