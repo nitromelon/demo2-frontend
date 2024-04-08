@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { backend_url, email, target, user_hash_password } from '$lib/const/variable';
+	import { backend_url, email, popup, popup_content, target, user_hash_password } from '$lib/const/variable';
 
 	export let cart_id: string;
 	export let id: string;
@@ -25,6 +25,8 @@
 		})
 			.then((res) => {
 				if (res.status === 200) {
+					$popup = true;
+					$popup_content = 'Order success !!';
 					appear = false;
 				}
 			})
@@ -48,6 +50,8 @@
 			return;
 		}
 		quantity = result.data.quantity;
+		$popup = true;
+		$popup_content = 'Update quantity successfullly';
 	}
 
 	async function remove() {
@@ -61,6 +65,9 @@
 				cart_id
 			})
 		}).then((res) => res.json());
+
+		$popup = true;
+		$popup_content = 'Delete product from cart successfullly';
 
 		appear = false;
 	}

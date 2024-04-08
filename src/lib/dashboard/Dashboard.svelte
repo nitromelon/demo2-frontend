@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { backend_url, target, user_valid } from '$lib/const/variable';
+	import { backend_url, popup, target, user_valid } from '$lib/const/variable';
 	import { onMount } from 'svelte';
 	import Product from './product/Product.svelte';
 	import Cart from './cart/Cart.svelte';
 	import Order from './order/Order.svelte';
+	import Popup from './Popup.svelte';
 
 	const user_features = ['Product', 'Cart', 'Order'];
 	const shopping_cart_manager_features = ['People']; // in people there has cart
@@ -105,6 +106,10 @@
 				<!-- <People /> -->
 			{/if}
 		{/if}
+
+		{#if $popup}
+			<Popup />
+		{/if}
 	</div>
 </div>
 
@@ -144,6 +149,7 @@
 		}
 
 		#right {
+			position: relative;
 			width: calc(100% - 50px);
 			height: 100%;
 			margin-left: 10px;

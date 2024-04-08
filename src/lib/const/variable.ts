@@ -6,3 +6,6 @@ export const email: Writable<string | null> = writable(null);
 export const user_hash_password: Writable<string | null> = writable(null);
 export const target: Writable<'admin' | 'user' | 'productmanager' | 'shoppingcartmanager'> =
 	writable('user');
+
+export const popup: Writable<boolean> = writable(false);
+export const popup_content: Writable<string> = writable('');

@@ -54,4 +54,18 @@ Follow these steps to install and use Tauri:
 
 This will create a standalone application in the `src-tauri/target/release` directory.
 
+## Testing
+
+I use playwright to test the app. To run the test, use the following command:
+
+```bash
+pnpm test
+```
+
+Note: if you don't have playwright installed, you can install it by running the following command:
+
+```bash
+pnpm exec playwright install
+```
+
 > Note: Tauri also requires some additional dependencies depending on your operating system. You can find more information about these in the [Tauri guides](https://tauri.app/v1/guides/).

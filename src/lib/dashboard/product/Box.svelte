@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { backend_url, email, target, user_hash_password } from '$lib/const/variable';
+	import {
+		backend_url,
+		email,
+		popup,
+		popup_content,
+		target,
+		user_hash_password
+	} from '$lib/const/variable';
 
 	export let id: string;
 	export let name: string;
@@ -16,8 +23,8 @@
 		quantity = 100;
 	}
 
-	function send() {
-		fetch(`${backend_url}/api/cart`, {
+	async function send() {
+		const result = await fetch(`${backend_url}/api/cart`, {
 			method: 'POST',
 			headers: {
 				Authorization: authorization,
@@ -28,36 +35,44 @@
 				quantity
 			})
 		});
+
+		$popup = true;
+
+		if (result.status === 200) {
+			$popup_content = 'Add to cart success !!';
+		} else {
+			$popup_content = 'Add to cart failed !!';
+		}
 	}
 
-    // TODO
+	// TODO
 	function edit() {
 		// edit product
-        fetch(`${backend_url}/api/product/${id}`, {
-            method: 'UPDATE',
-            headers: {
-                Authorization: authorization,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                price
-            })
-        }).then(() => {
-            window.location.reload();
-        });
+		fetch(`${backend_url}/api/product/${id}`, {
+			method: 'UPDATE',
+			headers: {
+				Authorization: authorization,
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				price
+			})
+		}).then(() => {
+			window.location.reload();
+		});
 	}
 
-    // TODO
+	// TODO
 	function del() {
 		// delete product
-        fetch(`${backend_url}/api/product/${id}`, {
-            method: 'DELETE',
-            headers: {
-                Authorization: authorization
-            }
-        }).then(() => {
-            window.location.reload();
-        });
+		fetch(`${backend_url}/api/product/${id}`, {
+			method: 'DELETE',
+			headers: {
+				Authorization: authorization
+			}
+		}).then(() => {
+			window.location.reload();
+		});
 	}
 </script>
 

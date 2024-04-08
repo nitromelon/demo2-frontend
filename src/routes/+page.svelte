@@ -9,7 +9,6 @@
 	let current_component = Login;
 
 	const switch_page = (data: CustomEvent) => {
-		alert(data.detail);
 		switch (data.detail) {
 			case 'login':
 				current_component = Login;
