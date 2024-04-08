@@ -37,6 +37,7 @@
 			});
 
 		if (response === null) {
+			alert("Can't create an account due to some error. The email might be already used.");
 			return;
 		}
 

@@ -48,6 +48,7 @@
 	const logout = () => {
 		localStorage.removeItem('email');
 		localStorage.removeItem('hashed_password');
+		alert('Goodbye!');
 		$user_valid = false;
 	};
 

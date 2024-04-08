@@ -12,8 +12,11 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
-    },
+			"all": false,
+      "dialog": {
+        "all": true
+      }
+		},
     "bundle": {
       "active": true,
       "category": "DeveloperTool",

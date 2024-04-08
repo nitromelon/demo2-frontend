@@ -34,6 +34,7 @@
 			});
 
 		if (response === null) {
+			alert('Invalid email or password');
 			return;
 		}
 
